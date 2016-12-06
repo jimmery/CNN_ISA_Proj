@@ -1,20 +1,20 @@
-module max( input [7:0] i1, 
-            input [7:0] i2,
-            input clk,  
-            output reg [7:0] max); 
+module max( input [31:0] i1, 
+            input [31:0] i2,
+            input en,  
+            output reg [31:0] max); 
     initial begin
         max = 0;
     end
-    always @ (posedge clk) begin
-        if (i1[7]) begin
-            if (i2[7])
+    always @ (en) begin
+        if (i1[31]) begin
+            if (i2[31])
                 max = 0;
             else
                 max = i2;
         end else begin
-            if (i2[7])
+            if (i2[31])
                 max = i1;
-            else if (i1[6:0] > i2[6:0])
+            else if (i1[30:0] > i2[30:0])
                 max = i1;
             else
                 max = i2;
