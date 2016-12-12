@@ -5,7 +5,7 @@ module max_decode(
     input [31:0] buffer [511:0], // is this how to do it? 
     input [11:0] inst, 
 
-    
+    // TODO not sure how to do input / output buffer read / write.
 )；
 
 wire [3:0] in1_reg;
